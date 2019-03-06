@@ -1,0 +1,15 @@
+<% include partials/header %>
+
+<h1>Edit the photo, "<%= photo.title %>"</h1>
+
+<form action="/photos/<%= photo._id %>?_method=PUT" method="POST">
+    <label for="title">Title</label>
+    <input type="text" id="title" name="photo[title]" value="<%= photo.title %>" required>
+    <label for="image">Image</label>
+    <input type="text" id="image" name="photo[image]" value="<%= photo.image %>" required>
+    <label for="author">Photographer</label>
+    <input type="text" id="date" name="photo[author]" value="<%= photo.author %>" required>
+    <button type="submit">Update/Edit Photo</button>
+</form>
+
+<% include partials/footer %>

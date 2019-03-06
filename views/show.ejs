@@ -1,0 +1,18 @@
+<% include partials/header %>
+
+<h1>More info about <%= photo.title %></h1>
+
+<img src="<%= photo.image %>" alt="<%= photo.title %>">
+
+<p>DESCRIPTION HERE..</p>
+
+<p>taken <%= (photo.author) ? 'by ' + photo.author : ''; %> on <%= photo.date.toDateString() %></p>
+
+<a href="/photos/<%= photo._id %>/edit">EDIT</a>
+
+<form action="/photos/<%= photo._id %>?_method=DELETE" method="POST">
+    <input type="submit" value="DELETE">
+</form>
+
+
+<% include partials/footer %>

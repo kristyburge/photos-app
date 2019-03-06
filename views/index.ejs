@@ -1,0 +1,30 @@
+<% include partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <h1>All Photos</h1>
+            <a class="btn btn-success btn-lg" href="/photos/new">Add a photo to the database</a>         
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+        
+        <% photos.forEach(photo => { %>
+    
+            <div class="card" style="width: 18rem;">
+                <img src="<%= photo.image %>" alt="<%= photo.title %>" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title"><%= photo.title %></h5>
+                    <p class="card-text">Some description here...probably truncated</p>
+                    <a class="btn btn-outline-primary" href="/photos/<%= photo._id %>">More details</a>
+                </div>
+            </div>
+        <% }); %>
+        
+        </div>
+    </div>
+</div>
+
+<% include partials/footer %>
